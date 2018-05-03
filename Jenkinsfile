@@ -5,28 +5,28 @@ pipeline {
        jdk "jdk8"
     }
     stages {
-        stage ('unit tests run') {
+        stage ("unit tests run") {
             steps {
                  script {
-                    log.info 'Starting'
-                    log.warning 'Nothing to do!'
+                    log.info "Starting"
+                    log.warning "Nothing to do!"
                  }
             }
         }
-        stage ('integration tests run') {
+        stage ("integration tests run") {
                     steps {
                          script {
-                            log.info 'Starting'
-                            log.warning 'Nothing to do!'
+                            log.info "Starting"
+                            log.warning "Nothing to do!"
                          }
                     }
         }
 
-        stage ('system tests run') {
+        stage ("system tests run") {
                             steps {
                                  script {
-                                    log.info 'Starting'
-                                    log.warning 'Nothing to do!'
+                                    log.info "Starting"
+                                    log.warning "Nothing to do!"
                                  }
                             }
         }
