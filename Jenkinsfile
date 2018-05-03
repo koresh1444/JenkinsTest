@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage ('Example') {
+        stage ('unit tests run') {
             steps {
                  script {
                     log.info 'Starting'
@@ -9,5 +9,23 @@ pipeline {
                  }
             }
         }
+        stage ('integration tests run') {
+                    steps {
+                         script {
+                            log.info 'Starting'
+                            log.warning 'Nothing to do!'
+                         }
+                    }
+        }
+
+        stage ('system tests run') {
+                            steps {
+                                 script {
+                                    log.info 'Starting'
+                                    log.warning 'Nothing to do!'
+                                 }
+                            }
+        }
+
     }
 }
