@@ -53,5 +53,5 @@ public class RESTStories extends JUnitStories {
     protected List<String> storyPaths() {
         return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()), "**/*.story", "");
     }
-
+//
 }
