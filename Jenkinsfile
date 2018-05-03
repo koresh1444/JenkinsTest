@@ -24,8 +24,6 @@ pipeline {
 
     stages {
         // While there is only one stage here, you can specify as many stages as you like!
-        stage("build") {
-
                         stage ("unit tests run") {
                             steps {
                                  script {
@@ -51,7 +49,5 @@ pipeline {
                                                  }
                                             }
                         }
-
-        }
     }
 }
