@@ -1,29 +1,25 @@
-pipeline {
-    agent any
-    environment {
-        ENV_NAME = "${env.BRANCH_NAME}"
-    }
+node {
+  try{
+    stage 'checkout project'
+    checkout scm
 
-    // ----------------
+    stage 'check env'
+    sh "mvn -v"
+    sh "java -version"
 
-    stages {
-        stage('Build Container') {
-            steps {
-                echo 'Building Container..'
+    stage 'test'
+    sh "mvn test"
 
-                script {
-                    if (ENVIRONMENT_NAME == 'development') {
-                        ENV_NAME = 'Development'
-                    } else if (ENVIRONMENT_NAME == 'release') {
-                        ENV_NAME = 'Production'
-                    }
-                }
-                echo 'Building Branch: ' + env.BRANCH_NAME
-                echo 'Build Number: ' + env.BUILD_NUMBER
-                echo 'Building Environment: ' + ENV_NAME
+    stage 'package'
+    sh "mvn package"
 
-                echo "Running your service with environemnt ${ENV_NAME} now"
-            }
-        }
-    }
+    stage 'report'
+    step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
+
+    stage 'Artifact'
+    step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar', fingerprint: true])
+
+  }catch(e){
+    throw e;
+  }
 }
