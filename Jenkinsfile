@@ -1,7 +1,5 @@
-@Library('utils') _
-
 pipeline {
-    agent none
+    agent any
     stage ('Example') {
         steps {
              script {
