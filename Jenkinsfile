@@ -14,40 +14,32 @@ pipeline {
         timeout(time: 90, unit: 'MINUTES')
     }
 
-    // Make sure we have GIT_COMMITTER_NAME and GIT_COMMITTER_EMAIL set due to machine weirdness.
-    environment {
-        GIT_COMMITTER_NAME = "jenkins"
-        GIT_COMMITTER_EMAIL = "jenkins@jenkins.io"
-        NEWER_CORE_VERSION = "2.89.3"
-    }
-
-
     stages {
         // While there is only one stage here, you can specify as many stages as you like!
-                        stage ("unit tests run") {
-                            steps {
-                                 script {
-                                    log.info "Starting"
-                                    log.warning "Nothing to do!"
-                                 }
-                            }
-                        }
-                        stage ("integration tests run") {
-                                    steps {
-                                         script {
-                                            log.info "Starting"
-                                            log.warning "Nothing to do!"
-                                         }
-                                    }
-                        }
+        stage ("unit tests run") {
+            steps {
+                script {
+                    log.info "Starting"
+                    log.warning "Nothing to do!"
+                }
+            }
+        }
+        stage ("integration tests run") {
+            steps {
+                script {
+                    log.info "Starting"
+                    log.warning "Nothing to do!"
+                }
+            }
+        }
 
-                        stage ("system tests run") {
-                                            steps {
-                                                 script {
-                                                    log.info "Starting"
-                                                    log.warning "Nothing to do!"
-                                                 }
-                                            }
-                        }
+        stage ("system tests run") {
+            steps {
+                script {
+                    log.info "Starting"
+                    log.warning "Nothing to do!"
+                }
+            }
+        }
     }
 }

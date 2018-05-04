@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HomeTask12.iml" filepath="$PROJECT_DIR$/HomeTask12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/alex-kirk.iml" filepath="$PROJECT_DIR$/.idea/modules/alex-kirk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/alex-kirk_main.iml" filepath="$PROJECT_DIR$/.idea/modules/alex-kirk_main.iml" group="alex-kirk" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/alex-kirk_test.iml" filepath="$PROJECT_DIR$/.idea/modules/alex-kirk_test.iml" group="alex-kirk" />
     </modules>
   </component>
 </project>
