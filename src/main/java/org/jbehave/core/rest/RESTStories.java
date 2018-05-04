@@ -1,5 +1,7 @@
 package org.jbehave.core.rest;
 
+import groovy.util.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.jbehave.core.Embeddable;
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.MostUsefulConfiguration;
@@ -29,12 +31,13 @@ import static org.jbehave.core.reporters.Format.HTML;
 //)
 
 public class RESTStories extends JUnitStories {
-
+    private static final Log log = (Log) LogFactory.getLog(RESTStories.class);
     public RESTStories() {
     }
 
     @Override
     public Configuration configuration() {
+
         Class<? extends Embeddable> embeddableClass = this.getClass();
         return new MostUsefulConfiguration().useStoryLoader(new LoadFromClasspath(embeddableClass))
                 .useStoryReporterBuilder(
