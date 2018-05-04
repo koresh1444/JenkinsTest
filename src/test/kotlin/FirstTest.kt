@@ -14,7 +14,6 @@ import org.openqa.selenium.By
 class FirstTest {
 
     private val log = LogFactory.getLog(FirstTest::class.java)
-
 //    @Before fun setup(){
 //        System.setProperty("webdriver.ie.driver", "C:\\Users\\oleksandr_korshun\\IdeaProjects\\aqa_cdp_Q1Q2_2018_Oleksandr_KorshunProject\\src\\main\\resources\\IEDriverServer.exe")
 //        InternetExplorerDriver(InternetExplorerOptions())
@@ -25,6 +24,7 @@ class FirstTest {
       drive {
           to (::MainPage){
               loginAction()
+              log.info("Test message")
           }
       }
     }
